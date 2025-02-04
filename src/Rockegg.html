@@ -1,0 +1,148 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+  rel="stylesheet"
+/>
+
+<body>
+  <div id="btn-block">
+    <a class="back" href="index.html"><button class="button_back"></button></a>
+    <div class="line"></div>
+    <div class="Rockegg"></div>
+    <div class="timer" id="timer">7.00</div>
+    <a class="ok" href="index.html"><button class="button_ok"></button></a>
+  </div>
+
+  <script>
+    let timeLeft = 420;
+    let timerElement = document.getElementById("timer");
+    let eggAnimation = document.querySelector(".Rockegg");
+    let buttonOk = document.querySelector(".button_ok");
+
+    let countdown = setInterval(() => {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      let formattedTime = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+      timerElement.textContent = formattedTime;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerElement.textContent = "0.00";
+        eggAnimation.style.animation = "none";
+        buttonOk.style.display = "block";
+      } else {
+        timeLeft--;
+      }
+    }, 1000);
+  </script>
+
+  <style>
+    body {
+      animation: bcground 0.5s infinite alternate;
+      background-position: cover;
+    }
+
+    .timer {
+      font-family: "Pixelify Sans", sans-serif;
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 10px;
+      background-color: transparent;
+      color: white;
+      font-size: 130px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-text-stroke: 1px black;
+    }
+
+    .line {
+      width: 300px;
+      height: 10px;
+      background-color: rgb(179, 130, 93);
+      position: absolute;
+      left: 0;
+      top: 50px;
+    }
+
+    .button_back {
+      width: 85px;
+      height: 40px;
+      background-image: url("back_button.png");
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      display: block;
+      left: 10px;
+      top: 60px;
+      background-color: transparent;
+    }
+
+    .button_back:hover {
+      filter: brightness(80%);
+    }
+
+    .button_ok {
+      width: 85px;
+      height: 40px;
+      background-image: url("ok_button.png");
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      top: 350px;
+      background-color: transparent;
+    }
+
+    .button_ok:hover {
+      filter: brightness(80%);
+    }
+
+    .Rockegg {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      display: block;
+      border-radius: 35px;
+      border: 5px solid rgb(185, 185, 185);
+      animation: Rockegg 0.5s infinite alternate;
+    }
+
+    @keyframes Rockegg {
+      0% {
+        background-image: url(Rockegg1.png);
+      }
+      50% {
+        background-image: url(Rockegg2.png);
+      }
+      100% {
+        background-image: url(Rockegg3.png);
+      }
+    }
+
+    @keyframes bcground {
+      0% {
+        background-image: url(bcground1.png);
+      }
+      100% {
+        background-image: url(bcground2.png);
+      }
+    }
+  </style>
+</body>

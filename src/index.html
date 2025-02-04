@@ -1,0 +1,99 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+  rel="stylesheet"
+/>
+
+<body>
+  <div id="btn-block">
+    <h1>EGG Boiling!</h1>
+    <div class="line"></div>
+    <a class="watheregg" href="watheregg.html"
+      ><button class="button_whateregg"></button
+    ></a>
+    <a class="Rockegg" href="Rockegg.html"
+      ><button class="button_rockegg"></button
+    ></a>
+  </div>
+  <style>
+    body {
+      animation: bcground 0.5s infinite alternate;
+      background-size: cover;
+      font-family: "Pixelify Sans", sans-serif;
+    }
+
+    h1 {
+      font-family: "Pixelify Sans", sans-serif;
+      font-weight: bold;
+      color: white;
+      -webkit-text-stroke: 1px black;
+    }
+
+    .button_whateregg {
+      width: 200px;
+      height: 200px;
+      background-image: url("watheregg1.png");
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      display: block;
+      border-radius: 35px;
+      border: 5px solid rgb(185, 185, 185);
+    }
+
+    .button_whateregg:hover {
+      background-image: url("watheregg3.png");
+      border: 5px solid rgb(134, 134, 134);
+    }
+    .button_rockegg {
+      width: 200px;
+      height: 200px;
+      background-image: url("Rockegg1.png");
+      background-size: cover;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      display: block;
+      border-radius: 35px;
+      border: 5px solid rgb(185, 185, 185);
+    }
+
+    .button_rockegg:hover {
+      background-image: url("Rockegg3.png");
+      border: 5px solid rgb(134, 134, 134);
+    }
+    .watheregg {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .Rockegg {
+      position: absolute;
+      top: 300px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .line {
+      width: 300px;
+      height: 10px;
+      background-color: rgb(179, 130, 93);
+      position: absolute;
+      left: 0px;
+      top: 50px;
+    }
+
+    @keyframes bcground {
+      0% {
+        background-image: url(bcground1.png);
+      }
+      100% {
+        background-image: url(bcground2.png);
+      }
+    }
+  </style>
+</body>
